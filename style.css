@@ -1,0 +1,8 @@
+#container{
+    height: 560px; 
+    width: 560px; 
+    background-color: red; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}

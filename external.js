@@ -1,3 +1,4 @@
+let size = 16;
 function egrid(size){
  for(let i = 0; i < size; i++){
     let div = document.createElement('div');
@@ -25,11 +26,17 @@ function removeAllChildNodes(parent) {
 }
 
 let main = document.querySelector('#container');
-egrid(16);
+egrid(size);
 
 let btn = document.querySelector('#btn');
 btn.addEventListener('click', (event) =>{
-    let size = Number(prompt("Enter your prefered grid size?"));
+    size = Number(prompt("Enter your prefered grid size?"));
+    removeAllChildNodes(main);
+    egrid(size);
+});
+
+let clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {
     removeAllChildNodes(main);
     egrid(size);
 })

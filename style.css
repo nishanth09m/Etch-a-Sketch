@@ -3,13 +3,14 @@
     max-width: 560px; 
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 3;
     border: 30px solid #05386b;
     border-radius: 5%;
 }
 
 body{
     background-color: #5cdb95;
+    font-family: 'Dancing Script', cursive;
 }
 
 .main{
@@ -17,22 +18,52 @@ body{
     justify-content: center;
     align-items: center;
     gap: 50px;
+    padding: 40px;
 }
 
 .itembox{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: #F9E795;
+    padding: 50px 30px;
+    border-radius: 5%;
 }
 
 button{
     cursor: pointer;
-    padding: 8px 16px;
+    padding: 12px 20px;
     border-radius: 8px;
-    background: transparent;
-    border: 1px solid royalblue;
-    color: #edf5e1;
+    background: #F96167;
+    border: 1px solid #F96167;
+    color: #E2D1F9;
     font-weight:bold;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
 }
 
+#colorpicker{
+    position: relative;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    padding: 0px;
+    display: flex;
+    align-self: center;
+}
+
+.header{
+    text-align: center;
+    font-size: 70px;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}

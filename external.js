@@ -36,8 +36,6 @@ let btn = document.querySelector('#btn');
 let color = document.querySelector('#color');
 let erase =  document.querySelector('#erase');
 
-main.setAttribute('style', 'align-items: center; justify-content: center;')
-
 egrid(size);
 
 function removeAllChildNodes(parent) {
@@ -48,6 +46,9 @@ function removeAllChildNodes(parent) {
 
 btn.addEventListener('click', (event) =>{
     size = Number(prompt("Enter your prefered grid size?"));
+    while(size > 100){
+        size = Number(prompt("Enter your a number below 100?"));
+    }
     removeAllChildNodes(main);
     randomColor = false;
     eraseColor = false;

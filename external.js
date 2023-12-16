@@ -10,18 +10,18 @@ function egrid(size){
         for(let j = 0; j < size; j++){
             let div1 = document.createElement('div');
             div1.setAttribute('id',`${i}` + `${j}`);
-            div1.setAttribute('style', 'background: grey; width: 35px; display: flex; flex-grow: 1;');    
+            div1.setAttribute('style', 'background: white; width: 35px; display: flex; flex-grow: 1;');    
 
             div1.addEventListener("mouseenter", (event) => {
-                if(eraseColor){
-                    div1.style.backgroundColor = 'grey';
+                if(randomColor){
+                    div1.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
                 }else{
-                    if(randomColor){
-                        div1.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-                    }else{
-                        let picker = document.querySelector('#colorpicker');
-                        div1.style.backgroundColor = picker.value;
-                    }
+                    let picker = document.querySelector('#colorpicker');
+                    div1.style.backgroundColor = picker.value;
+                }
+
+                if(eraseColor){
+                    div1.style.backgroundColor = 'white';
                 }
             });
             div.appendChild(div1);
@@ -36,6 +36,8 @@ let btn = document.querySelector('#btn');
 let color = document.querySelector('#color');
 let erase =  document.querySelector('#erase');
 
+main.setAttribute('style', 'align-items: center; justify-content: center;')
+
 egrid(size);
 
 function removeAllChildNodes(parent) {
@@ -47,24 +49,31 @@ function removeAllChildNodes(parent) {
 btn.addEventListener('click', (event) =>{
     size = Number(prompt("Enter your prefered grid size?"));
     removeAllChildNodes(main);
+    randomColor = false;
+    eraseColor = false;
     egrid(size);
 });
 
 clear.addEventListener('click', () => {
     removeAllChildNodes(main);
+    randomColor = false;
+    eraseColor = false;
     egrid(size);
 });
 
 random.addEventListener('click',() => {
     randomColor = true;
+    eraseColor = false;
 });
 
 color.addEventListener('click', () => {
     randomColor = false;
+    eraseColor = false;
 });
 
 erase.addEventListener('click', () => { 
     eraseColor = true;
+    randomColor = false;
 });
 
 

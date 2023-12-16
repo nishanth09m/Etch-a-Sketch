@@ -1,8 +1,38 @@
 #container{
     height: 560px; 
-    width: 560px; 
-    background-color: white; 
+    max-width: 560px; 
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    border: 30px solid #05386b;
+    border-radius: 5%;
 }
+
+body{
+    background-color: #5cdb95;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.itembox{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button{
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid royalblue;
+    color: #edf5e1;
+    font-weight:bold;
+    font-size: 20px;
+}
+
